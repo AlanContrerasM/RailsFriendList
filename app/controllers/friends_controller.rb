@@ -7,6 +7,11 @@ class FriendsController < ApplicationController
   # GET /friends or /friends.json
   def index
     @friends = Friend.all
+    
+  end
+
+  def personal
+    @friends = Friend.filter_user(current_user)
   end
 
   # GET /friends/1 or /friends/1.json

@@ -25,13 +25,7 @@
           <td><%= friend.phone %></td>
           <td><%= friend.twitter %></td>
           
-
-          <% if friend.user == current_user%>
-             <td><%= link_to 'Destroy', friend, class: "btn btn-outline-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          <%else%>
-            <td></td>
-          <%end%>
-
+          
           <%# commented out portion with an if false %>
           <% if false%>
                     <td><%= friend.user_id %></td>
@@ -44,6 +38,10 @@
                       <td></td>
                     <%end%>
           <% end %>
+
+
+          <td><%= link_to 'Destroy', friend, class: "btn btn-outline-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          
         </tr>
       <% end %>
     </tbody>
