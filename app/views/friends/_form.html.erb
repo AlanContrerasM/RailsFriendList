@@ -13,27 +13,35 @@
 
   <div class="field form-group">
     <%# <%= form.label :first_name %>
-    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name", :required => 'required' %>
   </div>
 
   <div class="field form-group">
     <%# form.label :last_name %> 
-    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name", :required => 'required' %>
   </div>
 
   <div class="field form-group">
     <%# <%= form.label :email %> 
-    <%= form.text_field :email, class:"form-control", placeholder:"Email" %>
+    <%= form.email_field :email, class:"form-control", placeholder:"Email", :required => 'required' %>
   </div>
 
   <div class="field form-group">
     <%# <%= form.label :phone %>
-    <%= form.text_field :phone, class:"form-control", placeholder:"Phone" %>
+    <%= form.telephone_field :phone, class:"form-control", placeholder:"Phone", :required => 'required', pattern:"[0-9]{10}" %>
   </div>
 
   <div class="field form-group">
     <%# <%= form.label :twitter %>
-    <%= form.text_field :twitter, class:"form-control", placeholder:"Twitter" %>
+    <%= form.text_field :twitter, class:"form-control", placeholder:"Twitter", :required => 'required' %>
+  </div>
+
+  <%# add new one for including user_id %>
+
+ <%#  <%= current_user.id  we could also be calling .inspect %>
+  <div class="field form-group">
+    <%# <%= form.label :twitter %>
+    <%= form.number_field :user_id, id: :friend_user_id, class:"form-control", value:current_user.id, type: :hidden, :required => 'required' %>
   </div>
   <br/>
 
